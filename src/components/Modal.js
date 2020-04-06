@@ -19,7 +19,7 @@ export default class Modal extends Component {
                   <div className="modal-content">
                     <div className="modal-header text-center">
                       <h4>{title}</h4>
-                      <img src={img} />
+                      <img src={img} alt="product picture" />
                       <p className="description">{info}</p>
                     </div>
                     <div className="model-body mx-3">
@@ -28,58 +28,58 @@ export default class Modal extends Component {
                           <h5 className="title">size</h5>
                           <div className="row">
                             <input type="radio" id="size_1" />
-                            <label for="Small">Small</label>
+                            <label>Small</label>
                           </div>
                           <div className="row">
                             <input type="radio" id="size_2" />
-                            <label for="Medium">Medium</label>
+                            <label>Medium</label>
                           </div>
                           <div className="row">
                             <input type="radio" id="size_3" />
-                            <label for="Large">Large</label>
+                            <label>Large</label>
                           </div>
                         </div>
                         <div className="Milk">
                           <h5 className="title">milk</h5>
                           <div className="row">
                             <input type="radio" id="milk_1" />
-                            <label for="No Milk">No Milk</label>
+                            <label>No Milk</label>
                           </div>
                           <div className="row">
                             <input type="radio" id="milk_2" />
-                            <label for="Whole Milk">Whole Milk</label>
+                            <label>Whole Milk</label>
                           </div>
                           <div className="row">
                             <input type="radio" id="milk_3" />
-                            <label for="Soy Milk">Soy Milk</label>
+                            <label>Soy Milk</label>
                           </div>
                           <div className="row">
                             <input type="radio" id="milk_4" />
-                            <label for="Almond Milk">Almond Milk</label>
+                            <label>Almond Milk</label>
                           </div>
                         </div>
                         <div className="Sweetner">
                           <h5 className="title">Sweetner</h5>
                           <div className="row">
                             <input type="radio" id="sweet_1" />
-                            <label for="No Suger">No Suger</label>
+                            <label>No Suger</label>
                           </div>
                           <div className="row">
                             <input type="radio" id="sweet_2" />
-                            <label for="One Spoon">One Spoon</label>
+                            <label>One Spoon</label>
                           </div>
                           <div className="row">
                             <input type="radio" id="sweet_3" />
-                            <label for="Double Double">Double-Double</label>
+                            <label>Double-Double</label>
                           </div>
                         </div>
                       </form>
                       <h4>Price{price}</h4>
                       <Link to="/">
-                        <button onClick={() => closeModal()}>store</button>
+                        <button onClick={closeModal}>store</button>
                       </Link>
                       <Link to="/cart">
-                        <button onClick={(() => addToCart(id), closeModal())}>
+                        <button onClick={(closeModal, () => addToCart(id))}>
                           add to cart
                         </button>
                       </Link>

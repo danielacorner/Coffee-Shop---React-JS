@@ -1,10 +1,19 @@
-.products {
-  background-image: url("img/martin-sX4lxBWV0-A-unsplash.jpg");
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/*.products {
+  background-image: url("./img/martin-sX4lxBWV0-A-unsplash.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   max-height: 800px;
-}
+}*/
 
 ul li {
   list-style: none;
@@ -14,10 +23,24 @@ ul li {
   height: 10vmin;
   pointer-events: none;
 }
+.cart_logo:hover {
+  text-decoration: underline !important;
+  color: black !important;
+}
 
 .coffee {
   height: 12vmin;
   pointer-events: none;
+}
+
+.title {
+  font-family: "Kalam", cursive;
+  color: black;
+  text-transform: capitalize;
+}
+
+a:hover {
+  color: black !important;
 }
 
 .coffeType {

@@ -14,12 +14,22 @@ class ProductProvider extends React.Component {
     cartTotal: 0
   };
 
-  handleDetail = () => {
-    console.log("hello");
+  handleDetail = id => {
+    const product = this.state.products.find(item => item.id === id);
+    return product;
   };
 
   addToCart = () => {
-    console.log("hello");
+    console.log("hello from cart");
+  };
+
+  openModal = id => {
+    const product = this.handleDetail(id);
+    return { modalProduct: product, openModal: true };
+  };
+
+  closeModal = () => {
+    return { openModal: false };
   };
 
   render() {
@@ -28,7 +38,9 @@ class ProductProvider extends React.Component {
         value={{
           ...this.state,
           handleDetail: this.handleDetail,
-          addToCart: this.addToCart
+          addToCart: this.addToCart,
+          openModal: this.openModal,
+          closeModal: this.closeModal
         }}
       >
         {this.props.children}

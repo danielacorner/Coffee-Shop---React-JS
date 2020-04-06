@@ -12,7 +12,10 @@ export default class Product extends Component {
             {value => (
               <div
                 className="img-container p-4"
-                onClick={() => value.handleDetail(id)}
+                onClick={() => {
+                  value.handleDetail(id);
+                  value.openModal(id);
+                }}
               >
                 <div className="coffeType">
                   <Link to="/modal">
