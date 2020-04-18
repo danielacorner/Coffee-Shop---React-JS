@@ -6,17 +6,17 @@ export const coffeeList = [
     price: 4,
     info: "smooth Latte right from Brazil",
     inCart: false,
-    count: 0
+    count: 0,
   },
 
   {
     id: 2,
-    title: "Cuppochino",
+    title: "Cappuccino",
     img: "img/phil-hearing-QXzdFy92CGY-unsplash1.png",
     price: 4.5,
     info: "All you need to have a good day is this perfect cup of Cappochino",
     inCart: false,
-    count: 0
+    count: 0,
   },
 
   {
@@ -26,7 +26,7 @@ export const coffeeList = [
     price: 3.5,
     info: "An amazing black coffee you would come back for again",
     inCart: false,
-    count: 0
+    count: 0,
   },
 
   {
@@ -36,7 +36,7 @@ export const coffeeList = [
     price: 1.5,
     info: "Small concentrate shot of our best Colombian coffee",
     inCart: false,
-    count: 0
+    count: 0,
   },
 
   {
@@ -46,7 +46,7 @@ export const coffeeList = [
     price: 2.5,
     info: "Amazing treat with perfect Chocolate Vanila flavores",
     inCart: false,
-    count: 0
+    count: 0,
   },
 
   {
@@ -56,8 +56,8 @@ export const coffeeList = [
     price: 4,
     info: "Try our special Mattch, you would love it",
     inCart: false,
-    count: 0
-  }
+    count: 0,
+  },
 ];
 
 export const detailProduct = {
@@ -67,5 +67,5 @@ export const detailProduct = {
   price: 4,
   info: "smooth Latte right from Brazil",
   inCart: false,
-  count: 0
+  count: 0,
 };

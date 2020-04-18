@@ -7,20 +7,19 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/*.products {
-  background-image: url("./img/martin-sX4lxBWV0-A-unsplash.jpg");
+.products {
+  background-image: url("/img/mike-kenneally-TD4DBagg2wE-unsplash.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  max-height: 800px;
-}*/
+}
 
 ul li {
   list-style: none;
 }
 
 .cart_logo {
-  height: 10vmin;
+  height: 8vmin;
   pointer-events: none;
 }
 .cart_logo:hover {
@@ -29,12 +28,13 @@ ul li {
 }
 
 .coffee {
-  height: 12vmin;
+  height: 10vmin;
   pointer-events: none;
 }
 
 .title {
   font-family: "Kalam", cursive;
+  font-size: 22px;
   color: black;
   text-transform: capitalize;
 }
@@ -51,10 +51,63 @@ a:hover {
   transform: scale(1.1);
 }
 
+.card-img-top {
+  cursor: pointer;
+}
+
 .btn-cart {
   text-transform: capitalize;
   padding: 7px 0;
 }
-.btn-cart:hover {
-  background: purpel;
+
+.modal-box {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#modal {
+  background-color: blanchedalmond;
+  width: 100vw;
+  max-height: 100vh;
+  overflow-y: auto;
+}
+
+footer {
+  color: white;
+}
+
+footer p {
+  margin-bottom: 0;
+  margin: 0 auto;
+}
+
+.shoppingCart {
+  background-color: blanchedalmond;
+  height: 100%;
+}
+
+.btn-black {
+  background: transparent;
+  text-transform: capitalize;
+  font-size: 0.08rem !important;
+  color: black;
+  border-radius: 0 !important;
+  border: 0.1rem solid black !important;
+}
+
+.btn-black:hover {
+  background: black !important;
+  color: black !important;
+}
+
+.cart-icon {
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: darkgoldenrod;
 }

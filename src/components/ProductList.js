@@ -19,6 +19,16 @@ export default class ProductList extends Component {
             </div>
           </div>
         </div>
+
+        <footer>
+          <p>
+            <a href="http://www.onlinewebfonts.com/icon">Icon Fonts</a> is
+            licensed by CC BY 3.0
+          </p>
+          <p>
+            created by <span>shani chulin</span> 2020
+          </p>
+        </footer>
       </React.Fragment>
     );
   }

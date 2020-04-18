@@ -6,81 +6,170 @@ export default class Modal extends Component {
   render() {
     return (
       <ProductConsumer>
-        {value => {
-          const { id, img, title, info, price } = value.modalProduct;
-          const { openModal, closeModal, addToCart } = value;
+        {(value) => {
+          const { id, img, title, price, inCart } = value.modalProduct;
+          const { show, closeModal, addToCart } = value;
 
-          if (!openModal) {
+          if (!show) {
             return null;
           } else {
             return (
-              <div className="modal" id="myModal">
-                <div className="modal-dialog">
-                  <div className="modal-content">
-                    <div className="modal-header text-center">
-                      <h4>{title}</h4>
-                      <img src={img} alt="product picture" />
-                      <p className="description">{info}</p>
-                    </div>
-                    <div className="model-body mx-3">
+              <div className="modal-box">
+                <div className="container">
+                  <div className="row">
+                    <div
+                      id="modal"
+                      className="col-8 mx-auto col-md-6 col-lg-4 items-center text-capitalize"
+                    >
+                      <h5>customize your drink</h5>
+                      <img src={img} className="img-fluid" alt="product" />
+                      <h5 className="form-title pb-4 ">{title}</h5>
                       <form action="#">
-                        <div className="coffeSize">
-                          <h5 className="title">size</h5>
+                        <fieldset className="form-group">
                           <div className="row">
-                            <input type="radio" id="size_1" />
-                            <label>Small</label>
+                            <div className="col-sm-10">
+                              <h5 className="title">size</h5>
+                              <div className="form-check">
+                                <input
+                                  className="form-check-input"
+                                  type="radio"
+                                  id="size_1"
+                                  name="size"
+                                />
+                                <label className="form-check-label">
+                                  Small
+                                </label>
+                              </div>
+                              <div className="form-check">
+                                <input
+                                  className="form-check-input"
+                                  type="radio"
+                                  id="size_2"
+                                  name="size"
+                                />
+                                <label className="form-check-label">
+                                  Medium
+                                </label>
+                              </div>
+                              <div className="form-check">
+                                <input
+                                  className="form-check-input"
+                                  type="radio"
+                                  id="size_3"
+                                  name="size"
+                                />
+                                <label className="form-check-label">
+                                  Large
+                                </label>
+                              </div>
+                            </div>
                           </div>
+                        </fieldset>
+                        <fieldset className="form-group">
                           <div className="row">
-                            <input type="radio" id="size_2" />
-                            <label>Medium</label>
+                            <div className="col-sm-10">
+                              <h5 className="title pt-4">milk</h5>
+                              <div className="form-check">
+                                <input
+                                  className="form-check-input"
+                                  type="radio"
+                                  id="milk_1"
+                                  name="milk"
+                                />
+                                <label className="form-check-label">
+                                  No Milk
+                                </label>
+                              </div>
+                              <div className="form-check">
+                                <input
+                                  className="form-check-input"
+                                  type="radio"
+                                  id="milk_2"
+                                  name="milk"
+                                />
+                                <label className="form-check-label">
+                                  Whole Milk
+                                </label>
+                              </div>
+                              <div className="form-check">
+                                <input
+                                  className="form-check-input"
+                                  type="radio"
+                                  id="milk_3"
+                                  name="milk"
+                                />
+                                <label className="form-check-label">
+                                  Soy Milk
+                                </label>
+                              </div>
+                              <div className="form-check">
+                                <input
+                                  className="form-check-input"
+                                  type="radio"
+                                  id="milk_4"
+                                  name="milk"
+                                />
+                                <label className="form-check-label">
+                                  Almond Milk
+                                </label>
+                              </div>
+                            </div>
                           </div>
+                        </fieldset>
+                        <fieldset className="form-group">
                           <div className="row">
-                            <input type="radio" id="size_3" />
-                            <label>Large</label>
+                            <div className="col-sm-10">
+                              <h5 className="title pt-4">Sweetner</h5>
+                              <div className="form-check">
+                                <input
+                                  className="form-check-input"
+                                  type="radio"
+                                  id="sweet_1"
+                                  name="sweet"
+                                />
+                                <label className="form-check-label">
+                                  No Suger
+                                </label>
+                              </div>
+                              <div className="form-check">
+                                <input
+                                  className="form-check-input"
+                                  type="radio"
+                                  id="sweet_2"
+                                  name="sweet"
+                                />
+                                <label className="form-check-label">
+                                  One Spoon
+                                </label>
+                              </div>
+                              <div className="form-check">
+                                <input
+                                  className="form-check-input"
+                                  type="radio"
+                                  id="sweet_3"
+                                  name="sweet"
+                                />
+                                <label className="form-check-label">
+                                  Double-Double
+                                </label>
+                              </div>
+                            </div>
                           </div>
-                        </div>
-                        <div className="Milk">
-                          <h5 className="title">milk</h5>
-                          <div className="row">
-                            <input type="radio" id="milk_1" />
-                            <label>No Milk</label>
-                          </div>
-                          <div className="row">
-                            <input type="radio" id="milk_2" />
-                            <label>Whole Milk</label>
-                          </div>
-                          <div className="row">
-                            <input type="radio" id="milk_3" />
-                            <label>Soy Milk</label>
-                          </div>
-                          <div className="row">
-                            <input type="radio" id="milk_4" />
-                            <label>Almond Milk</label>
-                          </div>
-                        </div>
-                        <div className="Sweetner">
-                          <h5 className="title">Sweetner</h5>
-                          <div className="row">
-                            <input type="radio" id="sweet_1" />
-                            <label>No Suger</label>
-                          </div>
-                          <div className="row">
-                            <input type="radio" id="sweet_2" />
-                            <label>One Spoon</label>
-                          </div>
-                          <div className="row">
-                            <input type="radio" id="sweet_3" />
-                            <label>Double-Double</label>
-                          </div>
-                        </div>
+                        </fieldset>
                       </form>
                       <h4>Price{price}</h4>
                       <Link to="/">
-                        <button onClick={closeModal}>store</button>
+                        <button onClick={() => closeModal()}>store</button>
                       </Link>
                       <Link to="/cart">
-                        <button onClick={(closeModal, () => addToCart(id))}>
-                          add to cart
+                        <button
+                          disabled={inCart ? true : false}
+                          onClick={() => {
+                            value.addToCart(id);
+                            value.closeModal();
+                          }}
+                        >
+                          {inCart ? "inCart" : "addToCart"}
                         </button>
                       </Link>
                     </div>
