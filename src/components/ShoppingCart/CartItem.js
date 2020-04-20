@@ -1,9 +1,12 @@
 import React from "react";
 
 export default function CartItem({ item, value }) {
+  //how many items are in the cart - of the specifice item - count
   const { id, title, img, price, count } = item;
+  //in the value we have all the methods
   const { increment, decrement, removeItem } = value;
   return (
+    //every item we're going to return as a separate row
     <div className="row my-1 text-capitalize text-center">
       <div className="col-10 mx-auto col-lg-2">
         <img

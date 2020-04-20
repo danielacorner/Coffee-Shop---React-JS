@@ -169,7 +169,7 @@ export default class Modal extends Component {
                             value.closeModal();
                           }}
                         >
-                          {inCart ? "inCart" : "addToCart"}
+                          add to cart
                         </button>
                       </Link>
                     </div>
