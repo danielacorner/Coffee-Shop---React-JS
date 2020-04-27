@@ -8,34 +8,30 @@ class ProductProvider extends React.Component {
     products: coffeeList,
     show: false,
     modalProduct: detailProduct,
-    size: "",
-    milk: "",
-    sweet: "",
+    size="",
+    milk="",
+    sweet="",
     cart: [],
     cartSubTotal: 0,
     cartTax: 0,
     cartTotal: 0,
   };
 
-  /* handleChangeSize(event) {
-    this.setState({
-      size: event.target.value,
+  handleChangeSize = (event) => {
+    this.setState(() => {
+      return{size:event.target.value};
     });
-  }
-
-  handleChangeMilk(event) {
-    this.setState({
-      milk: event.target.value,
+  };
+  handleChangeMilk = (event) => {
+    this.setState(() => {
+      return{milk:event.target.value};
     });
-  }
-
-  handleChangeSweet(event) {
-    this.setState({
-      sweet: event.target.value,
+  };
+  handleChangeSweet = (event) => {
+    this.setState(() => {
+      return{sweet:event.target.value};
     });
-  }
-  */
-
+  };
   componentDidMount() {
     this.setProducts();
   }

@@ -10,8 +10,8 @@ export default class ProductList extends Component {
           <div className="container">
             <div className="row">
               <ProductConsumer>
-                {value => {
-                  return value.products.map(product => {
+                {(value) => {
+                  return value.products.map((product) => {
                     return <Product product={product} key={product.id} />;
                   });
                 }}
@@ -20,7 +20,7 @@ export default class ProductList extends Component {
           </div>
         </div>
 
-        <footer>
+        <footer className="text-center">
           <p>
             <a href="http://www.onlinewebfonts.com/icon">Icon Fonts</a> is
             licensed by CC BY 3.0

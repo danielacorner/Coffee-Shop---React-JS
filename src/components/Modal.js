@@ -36,8 +36,11 @@ export default class Modal extends Component {
                                     type="radio"
                                     id="size_1"
                                     name="size"
+                                    value="small"
                                     checked={size === "small"}
-                                    /*  onChange={() => value.handleChangeSize()}*/
+                                    onChange={() => {
+                                      value.handleChangeSize();
+                                    }}
                                   />
                                   Small
                                 </label>
@@ -52,9 +55,11 @@ export default class Modal extends Component {
                                     type="radio"
                                     id="size_2"
                                     name="size"
+                                    value="medium"
                                     checked={size === "medium"}
-                                    /*  onChange={() => value.handleChangeSize()}
-                                    value="medium"*/
+                                    onChange={() => {
+                                      value.handleChangeSize();
+                                    }}
                                   />
                                   Medium
                                 </label>
@@ -68,7 +73,9 @@ export default class Modal extends Component {
                                     name="size"
                                     value="large"
                                     checked={size === "large"}
-                                    /*  onChange={() => value.handleChangeSize()}*/
+                                    onChange={() => {
+                                      value.handleChangeSize();
+                                    }}
                                   />
                                   Large
                                 </label>
@@ -89,7 +96,9 @@ export default class Modal extends Component {
                                     name="milk"
                                     value="no milk"
                                     checked={milk === "no milk"}
-                                    /*   onChange={() => value.handleChangeMilk()}*/
+                                    onChange={() => {
+                                      value.handleChangeMilk();
+                                    }}
                                   />
                                   No Milk
                                 </label>
@@ -103,7 +112,9 @@ export default class Modal extends Component {
                                     name="milk"
                                     value="whole milk"
                                     checked={milk === "whole milk"}
-                                    /*    onChange={() => value.handleChangeMilk()}*/
+                                    onChange={() => {
+                                      value.handleChangeMilk();
+                                    }}
                                   />
                                   Whole Milk
                                 </label>
@@ -117,7 +128,9 @@ export default class Modal extends Component {
                                     name="milk"
                                     value="soy milk"
                                     checked={milk === "soy milk"}
-                                    /*      onChange={() => value.handleChangeMilk()}*/
+                                    onChange={() => {
+                                      value.handleChangeMilk();
+                                    }}
                                   />
                                   Soy Milk
                                 </label>
@@ -131,7 +144,9 @@ export default class Modal extends Component {
                                     name="milk"
                                     value="almond milk"
                                     checked={milk === "almond milk"}
-                                    /*     onChange={() => value.handleChangeMilk()}*/
+                                    onChange={() => {
+                                      value.handleChangeMilk();
+                                    }}
                                   />
                                   Almond Milk
                                 </label>
@@ -152,7 +167,9 @@ export default class Modal extends Component {
                                     name="sweet"
                                     value="no suger"
                                     checked={sweet === "no suger"}
-                                    /*    onChange={() => value.handleChangeSweet()}*/
+                                    onChange={() => {
+                                      value.handleChangeSweet();
+                                    }}
                                   />
                                   No Suger
                                 </label>
@@ -166,7 +183,9 @@ export default class Modal extends Component {
                                     name="sweet"
                                     value="one spoon"
                                     checked={sweet === "one spoon"}
-                                    /*   onChange={() => value.handleChangeSweet()}*/
+                                    onChange={() => {
+                                      value.handleChangeSweet();
+                                    }}
                                   />
                                   One Spoon
                                 </label>
@@ -181,7 +200,9 @@ export default class Modal extends Component {
                                     value="double double"
                                     checked={sweet === "double double"}
                                     //onChange helps me to put what the client chose in the state
-                                    /*     onChange={() => value.handleChangeSweet()}*/
+                                    onChange={() => {
+                                      value.handleChangeSweet();
+                                    }}
                                   />
                                   Double-Double
                                 </label>
