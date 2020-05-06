@@ -8,7 +8,7 @@ export default class Modal extends Component {
       <ProductConsumer>
         {(value) => {
           const { id, img, title, price } = value.modalProduct;
-          const { show, size, milk, sweet } = value;
+          const { show, handleChange, handleSubmit } = value;
 
           if (!show) {
             return null;
@@ -24,7 +24,7 @@ export default class Modal extends Component {
                       <h5 className="text-center mt-2">customize your drink</h5>
                       <img src={img} className="img-fluid" alt="product" />
                       <h5 className="form-title pb-3 text-center">{title}</h5>
-                      <form action="#">
+                      <form action="#" onSubmit={handleSubmit}>
                         <fieldset className="form-group">
                           <div className="row">
                             <div className="col-sm-2 pt-0">
@@ -37,16 +37,11 @@ export default class Modal extends Component {
                                     id="size_1"
                                     name="size"
                                     value="small"
-                                    checked={size === "small"}
-                                    onChange={() => {
-                                      value.handleChangeSize();
-                                    }}
+                                    checked={value.size === "small"}
+                                    onChange={(event) => handleChange(event)}
                                   />
                                   Small
                                 </label>
-                                <legend className="col-form-label col-sm-10 pt-0">
-                                  {price * 0.8}
-                                </legend>
                               </div>
                               <div className="form-check">
                                 <label className="form-check-label">
@@ -56,10 +51,8 @@ export default class Modal extends Component {
                                     id="size_2"
                                     name="size"
                                     value="medium"
-                                    checked={size === "medium"}
-                                    onChange={() => {
-                                      value.handleChangeSize();
-                                    }}
+                                    checked={value.size === "medium"}
+                                    onChange={(event) => handleChange(event)}
                                   />
                                   Medium
                                 </label>
@@ -72,10 +65,8 @@ export default class Modal extends Component {
                                     id="size_3"
                                     name="size"
                                     value="large"
-                                    checked={size === "large"}
-                                    onChange={() => {
-                                      value.handleChangeSize();
-                                    }}
+                                    checked={value.size === "large"}
+                                    onChange={(event) => handleChange(event)}
                                   />
                                   Large
                                 </label>
@@ -95,10 +86,8 @@ export default class Modal extends Component {
                                     id="milk_1"
                                     name="milk"
                                     value="no milk"
-                                    checked={milk === "no milk"}
-                                    onChange={() => {
-                                      value.handleChangeMilk();
-                                    }}
+                                    checked={value.milk === "no milk"}
+                                    onChange={(event) => handleChange(event)}
                                   />
                                   No Milk
                                 </label>
@@ -111,10 +100,8 @@ export default class Modal extends Component {
                                     id="milk_2"
                                     name="milk"
                                     value="whole milk"
-                                    checked={milk === "whole milk"}
-                                    onChange={() => {
-                                      value.handleChangeMilk();
-                                    }}
+                                    checked={value.milk === "whole milk"}
+                                    onChange={(event) => handleChange(event)}
                                   />
                                   Whole Milk
                                 </label>
@@ -127,10 +114,8 @@ export default class Modal extends Component {
                                     id="milk_3"
                                     name="milk"
                                     value="soy milk"
-                                    checked={milk === "soy milk"}
-                                    onChange={() => {
-                                      value.handleChangeMilk();
-                                    }}
+                                    checked={value.milk === "soy milk"}
+                                    onChange={(event) => handleChange(event)}
                                   />
                                   Soy Milk
                                 </label>
@@ -143,10 +128,8 @@ export default class Modal extends Component {
                                     id="milk_4"
                                     name="milk"
                                     value="almond milk"
-                                    checked={milk === "almond milk"}
-                                    onChange={() => {
-                                      value.handleChangeMilk();
-                                    }}
+                                    checked={value.milk === "almond milk"}
+                                    onChange={(event) => handleChange(event)}
                                   />
                                   Almond Milk
                                 </label>
@@ -166,10 +149,8 @@ export default class Modal extends Component {
                                     id="sweet_1"
                                     name="sweet"
                                     value="no suger"
-                                    checked={sweet === "no suger"}
-                                    onChange={() => {
-                                      value.handleChangeSweet();
-                                    }}
+                                    checked={value.sweet === "no suger"}
+                                    onChange={(event) => handleChange(event)}
                                   />
                                   No Suger
                                 </label>
@@ -182,10 +163,8 @@ export default class Modal extends Component {
                                     id="sweet_2"
                                     name="sweet"
                                     value="one spoon"
-                                    checked={sweet === "one spoon"}
-                                    onChange={() => {
-                                      value.handleChangeSweet();
-                                    }}
+                                    checked={value.sweet === "one spoon"}
+                                    onChange={(event) => handleChange(event)}
                                   />
                                   One Spoon
                                 </label>
@@ -198,11 +177,9 @@ export default class Modal extends Component {
                                     id="sweet_3"
                                     name="sweet"
                                     value="double double"
-                                    checked={sweet === "double double"}
+                                    checked={value.sweet === "double double"}
                                     //onChange helps me to put what the client chose in the state
-                                    onChange={() => {
-                                      value.handleChangeSweet();
-                                    }}
+                                    onChange={(event) => handleChange(event)}
                                   />
                                   Double-Double
                                 </label>
@@ -210,19 +187,26 @@ export default class Modal extends Component {
                             </div>
                           </div>
                         </fieldset>
-                        <div className="d-flex justify-content-center py-3">
-                          <h4 className="px-2">Price {price} $</h4>
-                          <button
-                            className="btn btn-outline-info text-capitalize"
-                            //{inCart ? true : false}
-                            onClick={() => {
-                              value.addToCart(id);
-                            }}
-                          >
-                            add to cart
-                          </button>
-                        </div>
+                        <button
+                          className="btn btn-outline-info text-capitalize"
+                          type="submit"
+                        >
+                          submit
+                        </button>
                       </form>
+                      <div className="d-flex justify-content-center py-3">
+                        <h4 className="px-2">Price {price} $</h4>
+                        <button
+                          className="btn btn-outline-info text-capitalize"
+                          type="submit"
+                          //{inCart ? true : false }
+                          onClick={() => {
+                            value.addToCart(id);
+                          }}
+                        >
+                          add to cart
+                        </button>
+                      </div>
                       <div className="buttons text-center">
                         <Link to="/">
                           <button

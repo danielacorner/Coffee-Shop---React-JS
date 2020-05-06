@@ -8,30 +8,23 @@ class ProductProvider extends React.Component {
     products: coffeeList,
     show: false,
     modalProduct: detailProduct,
-    size="",
-    milk="",
-    sweet="",
     cart: [],
     cartSubTotal: 0,
     cartTax: 0,
     cartTotal: 0,
+    size: "",
+    milk: "",
+    sweet: "",
   };
 
-  handleChangeSize = (event) => {
-    this.setState(() => {
-      return{size:event.target.value};
-    });
-  };
-  handleChangeMilk = (event) => {
-    this.setState(() => {
-      return{milk:event.target.value};
-    });
-  };
-  handleChangeSweet = (event) => {
-    this.setState(() => {
-      return{sweet:event.target.value};
-    });
-  };
+  handleSubmit(event) {
+    event.preventDefault();
+  }
+
+  handleChange(event) {
+    this.setState({ value: event.target.value });
+  }
+
   componentDidMount() {
     this.setProducts();
   }
@@ -191,9 +184,8 @@ class ProductProvider extends React.Component {
           decrement: this.decrement,
           removeItem: this.removeItem,
           clearCart: this.clearCart,
-          handleChangeSize: this.handleChangeSize,
-          handleChangeMilk: this.handleChangeMilk,
-          handleChangeSweet: this.handleChangeSweet,
+          handleChange: this.handleChange,
+          handleSubmit: this.handleSubmit,
         }}
       >
         {this.props.children}

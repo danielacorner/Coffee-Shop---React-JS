@@ -2,9 +2,9 @@ import React from "react";
 
 export default function CartItem({ item, value }) {
   //how many items are in the cart - of the specifice item - count
-  const { id, title, img, price, count, size, milk, sweet } = item;
+  const { id, title, img, price, count } = item;
   //in the value we have all the methods
-  const { increment, decrement, removeItem } = value;
+  const { increment, decrement, removeItem, size, milk, sweet } = value;
   return (
     //every item we're going to return as a separate row
     <div className="row my-1 text-capitalize text-center">
@@ -18,8 +18,7 @@ export default function CartItem({ item, value }) {
       </div>
       <div className="col-10 mx-auto col-lg-2 py-2">
         <span className="d-lg-none">product: </span>
-        {title}
-        {(size, milk, sweet)}
+        {title}, {size} ,{milk} ,{sweet}
       </div>
       <div className="col-10 mx-auto col-lg-2 py-2">
         <span className="d-lg-none">price: </span>
