@@ -1,7 +1,7 @@
 import React from "react";
 import { coffeeList, detailProduct } from "./data";
 
-const ProductContext = React.createContext();
+export const ProductContext = React.createContext();
 
 class ProductProvider extends React.Component {
   state = {
